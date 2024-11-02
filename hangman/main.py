@@ -7,6 +7,3 @@ for i in range(len (hanglist)):
     time.sleep(1)
 
 
-
-#  for i in hanglist:
-#      print(i)
