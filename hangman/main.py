@@ -1,10 +1,98 @@
 import random
 import os
 import time
-hanglist = ["steven", "sam", "code"]
-for i in range(len (hanglist)):
-    print(hanglist[i])
-    time.sleep(1)
+# let hangman = [" 
+# ____
+# |/   |
+# |   
+# |    
+# |    
+# |    
+# |
+# |_____
+# ";
+# "
+#  ____
+# |/   |
+# |   (_)
+# |    
+# |    
+# |    
+# |
+# |_____
+# ";
+# "
+#  ____
+# |/   |
+# |   (_)
+# |    |
+# |    |    
+# |    
+# |
+# |_____
+# ";
+# "
+#  ____
+# |/   |
+# |   (_)
+# |   \|
+# |    |
+# |    
+# |
+# |_____
+# ";
+# "
+#  ____
+# |/   |
+# |   (_)
+# |   \|/
+# |    |
+# |    
+# |
+# |_____
+# ";
+# "
+#  ____
+# |/   |
+# |   (_)
+# |   \|/
+# |    |
+# |   / 
+# |
+# |_____
+# ";
+# "
+#  ____
+# |/   |
+# |   (_)
+# |   \|/
+# |    |
+# |   / \
+# |
+# |_____
+# ";
+# "
+#  ____
+# |/   |
+# |   (_)
+# |   /|\
+# |    |
+# |   | |
+# |
+# |_____
+# "]
+hanglist = ["stephen", "sam", "code"]
+klist = []
+# for i in range(len (hanglist)):
+#     print(hanglist[i])
+#     time.sleep(1)
+#     index = i
+for word in hanglist:
+    for i in range(len(word)):
+        index = i
+        print("_ ", end="")
+        
+    print()
 
-
-#back
+while True:
+    guessed = input("guess: a")
