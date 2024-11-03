@@ -25,7 +25,23 @@ def main():
             
         else:
             print("Incorrect, try again!")
-        
+    time.sleep(1)
+    print("Thanks for playing!")
+    time.sleep(1)
+    clear()
+    print("Would you like to play again?")
+    print("1. Yes")
+    print("2. No")
+    choice = int(input())
+    if choice == 1:
+        main()
+    else:
+        print("Goodbye!")
+        time.sleep(1)
+        clear()
+        exit()
+
+
 
 # Call the main function to start the game
 main()
