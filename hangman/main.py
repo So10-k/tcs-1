@@ -88,11 +88,10 @@ klist = []
 #     time.sleep(1)
 #     index = i
 for word in hanglist:
-    for i in range(len(word)):
-        index = i
-        print("_ ", end="")
+    guessed_word = ["_"] * len(word)s
+    print(" ".join(guessed_word))
         
     print()
 
 while True:
-    guessed = input("guess: a")
+    guessed = input("guess: ")
