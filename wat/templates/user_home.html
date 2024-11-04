@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Welcome, {{ username }}!</h1>
-    <p>This is your personalized homepage.</p>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Welcome, {{ username }}</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('user_home', username=serializer.dumps(session['username'])) }}">Home</a></li>
+                    <li><a href="{{ url_for('chat') }}">Chat Room</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h2>All Users</h2>
+        <ul>
+            {% for user, info in users.items() %}
+                <li><a href="{{ url_for('profile', username=user) }}">{{ user }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
