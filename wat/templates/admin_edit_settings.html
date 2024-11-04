@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Settings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Edit Settings</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('admin_panel') }}">Home</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <form method="post">
+            <label for="login_page_text">Login Page Text:</label>
+            <textarea id="login_page_text" name="login_page_text" required>{{ settings.login_page_text }}</textarea><br>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>

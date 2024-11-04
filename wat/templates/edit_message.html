@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Message</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Edit Message</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('chat') }}">Back to Chat</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <form method="post">
+            <textarea name="text" required>{{ message.text }}</textarea><br>
+            <button type="submit">Update Message</button>
+        </form>
+    </div>
+</body>
+</html>

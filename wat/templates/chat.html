@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Chat Room</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('user_home', username=serializer.dumps(session['username'])) }}">Home</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Messages</h2>
+        <ul>
+            {% for message in messages %}
+                <li>
+                    <strong>{{ message.username }}:</strong> {{ message.text }}
+                    {% if session['username'] == message.username or users[session['username']].is_admin %}
+                        - <a href="{{ url_for('edit_message', message_id=message.id) }}">Edit</a>
+                        - <a href="{{ url_for('delete_message', message_id=message.id) }}">Delete</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        <form method="post" action="{{ url_for('post_message') }}">
+            <textarea name="text" required></textarea><br>
+            <button type="submit">Post Message</button>
+        </form>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Chat Room</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('user_home', username=serializer.dumps(session['username'])) }}">Home</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Messages</h2>
+        <ul>
+            {% for message in messages %}
+                <li>
+                    <strong>{{ message.username }}:</strong> {{ message.text }}
+                    {% if session['username'] == message.username or users[session['username']].is_admin %}
+                        - <a href="{{ url_for('edit_message', message_id=message.id) }}">Edit</a>
+                        - <a href="{{ url_for('delete_message', message_id=message.id) }}">Delete</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        <form method="post" action="{{ url_for('post_message') }}">
+            <textarea name="text" required></textarea><br>
+            <button type="submit">Post Message</button>
+        </form>
+    </div>
+</body>
+</html>
